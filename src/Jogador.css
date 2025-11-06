@@ -1,6 +1,6 @@
 .jogador {
-  width: 180px;
-  height: 250px;
+  width: 140px;
+  height: 200px;
   background: linear-gradient(180deg, #1b1b1b 0%, #2a2a2a 100%);
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
@@ -8,10 +8,27 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 12px;
+  padding: 10px;
   font-family: "Poppins", sans-serif;
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .jogador {
+    width: 100px;
+    height: 145px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jogador {
+    width: 90px;
+    height: 130px;
+    padding: 6px;
+    border-radius: 10px;
+  }
 }
 
 .jogador:hover {
@@ -21,44 +38,107 @@
 
 .nome {
   position: absolute;
-  top: 10px;
-  left: 12px;
-  font-size: 1rem;
+  top: 8px;
+  left: 10px;
+  font-size: 0.85rem;
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .nome {
+    font-size: 0.7rem;
+    top: 6px;
+    left: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nome {
+    font-size: 0.6rem;
+    top: 4px;
+    left: 6px;
+  }
 }
 
 .posicao {
   position: absolute;
-  top: 10px;
-  right: 12px;
-  font-size: 0.9rem;
+  top: 8px;
+  right: 10px;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #ffcc00;
 }
 
+@media (max-width: 768px) {
+  .posicao {
+    font-size: 0.65rem;
+    top: 6px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .posicao {
+    font-size: 0.55rem;
+    top: 4px;
+    right: 6px;
+  }
+}
+
 .nota {
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   font-weight: 800;
   text-align: center;
   color: #4cff4c;
-  margin-top: 60px;
+  margin-top: 45px;
+}
+
+@media (max-width: 768px) {
+  .nota {
+    font-size: 1.3rem;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nota {
+    font-size: 1.1rem;
+    margin-top: 25px;
+  }
 }
 
 
 .precoJogador {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-align: center;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  padding: 6px 0;
+  padding: 5px 0;
   color: #00c8ff;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .precoJogador {
+    font-size: 0.7rem;
+    padding: 4px 0;
+    margin-bottom: 4px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .precoJogador {
+    font-size: 0.6rem;
+    padding: 3px 0;
+    margin-bottom: 3px;
+  }
 }
 
 .uniforme {
-  width: 150px;
-  height: 150px;
+  width: 110px;
+  height: 110px;
   object-fit: contain;
   position: absolute;
   top: 50%;
@@ -66,6 +146,20 @@
   transform: translate(-50%, -50%);
   opacity: 0.7;
   pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .uniforme {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .uniforme {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 
