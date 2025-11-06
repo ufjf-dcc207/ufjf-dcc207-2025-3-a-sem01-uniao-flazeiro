@@ -7,18 +7,22 @@ import ListaJogadores from './components/ListaJogadores'
 
 function App() {
   const jogadores = [
-    { posicao: 'GOL', nome: 'Cássio', nota: 7.2 },
-    { posicao: 'LAT', nome: 'Wesley', nota: 6.5 },
-    { posicao: 'ZAG', nome: 'Léo Ortiz', nota: 7.2 },
-    { posicao: 'ZAG', nome: 'João Marcelo', nota: 6.8 },
-    { posicao: 'LAT', nome: 'Alex Sandro', nota: 6.3 },
-    { posicao: 'VOL', nome: 'Matheus Henrique', nota: 7.1 },
-    { posicao: 'MEI', nome: 'De la Cruz', nota: 8.1 },
-    { posicao: 'MEI', nome: 'Matheus Pereira', nota: 8.3 },
-    { posicao: 'ATA', nome: 'Gabriel Veron', nota: 6.7 },
-    { posicao: 'ATA', nome: 'Pedro', nota: 8.5 },
-    { posicao: 'ATA', nome: 'Lautaro Díaz', nota: 7.0 }
+    { posicao: 'GOL', nome: 'Cássio', nota: 7.2, preco: 6.8 },
+    { posicao: 'LAT', nome: 'Wesley', nota: 6.5, preco: 5.2 },
+    { posicao: 'ZAG', nome: 'Léo Ortiz', nota: 7.2, preco: 7.8 },
+    { posicao: 'ZAG', nome: 'João Marcelo', nota: 6.8, preco: 5.5 },
+    { posicao: 'LAT', nome: 'Alex Sandro', nota: 6.3, preco: 4.2 },
+    { posicao: 'VOL', nome: 'Matheus Henrique', nota: 7.1, preco: 7.5 },
+    { posicao: 'MEI', nome: 'De la Cruz', nota: 8.1, preco: 12.4 },
+    { posicao: 'MEI', nome: 'Matheus Pereira', nota: 8.3, preco: 13.2 },
+    { posicao: 'ATA', nome: 'Gabriel Veron', nota: 6.7, preco: 6.9 },
+    { posicao: 'ATA', nome: 'Pedro', nota: 8.5, preco: 15.8 },
+    { posicao: 'ATA', nome: 'Lautaro Díaz', nota: 7.0, preco: 8.3 }
   ];
+
+  const pontuacaoTotal = jogadores.reduce((total, jogador) => total + jogador.nota, 0);
+  const valorTotal = jogadores.reduce((total, jogador) => total + jogador.preco, 0);
+  const patrimonio = 100.0;
 
   return (
     <>
@@ -55,15 +59,15 @@ function App() {
         <section className="stats">
           <div className="stat-card">
             <h3>Pontuação Total</h3>
-            <p className="stat-value">78.9</p>
+            <p className="stat-value">{pontuacaoTotal.toFixed(1)}</p>
           </div>
           <div className="stat-card">
             <h3>Valor do Time</h3>
-            <p className="stat-value">R$ 88,50</p>
+            <p className="stat-value">{valorTotal.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>
           </div>
           <div className="stat-card">
             <h3>Patrimônio</h3>
-            <p className="stat-value">R$ 100,00</p>
+            <p className="stat-value">{patrimonio.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>
           </div>
         </section>
       </main>
