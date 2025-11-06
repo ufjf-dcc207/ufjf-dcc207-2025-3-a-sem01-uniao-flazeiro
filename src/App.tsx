@@ -1,41 +1,19 @@
 import './App.css'
+import Header from './Header'
+import Footer from './Footer'
 import Campo from './Campo'
 import Jogador from './Jogador'
 
 function App() {
 
   return (
-    <div className="container">
-      <header className="header">
-        <div className="logo">Fantasy Brasileirão</div>
-        <nav className="nav">
-          <a href="#">Meu Time</a>
-          <a href="#">Mercado</a>
-          <a href="#">Parciais</a>
-          <a href="#">Classificação</a>
-        </nav>
-      </header>
-
-      <main className="main">
-        <section className="info-section">
-          <h1>Monte seu Time dos Sonhos</h1>
-          <p>Escale os melhores jogadores e dispute com seus amigos!</p>
-          <div className="stats">
-            <div className="stat-item">
-              <span className="stat-number">C$ 100,00</span>
-              <span className="stat-label">Cartoletas</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">11/11</span>
-              <span className="stat-label">Escalados</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">65.2</span>
-              <span className="stat-label">Pontos</span>
-            </div>
-          </div>
+    <>
+      <Header />
+      <main className="main-content">
+        <section className="hero">
+          <h2>Meu Time</h2>
+          <p>Escale seus jogadores e dispute a liderança!</p>
         </section>
-
         <Campo>
           <div style={{display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap'}}>
             <Jogador nome="Cássio" posicao="GOL" nota={7.2} preco={6.8} />
@@ -57,40 +35,23 @@ function App() {
             <Jogador nome="Lautaro Díaz" posicao="ATA" nota={7.0} preco={8.3} />
           </div>
         </Campo>
+        <section className="stats">
+          <div className="stat-card">
+            <h3>Pontuação Total</h3>
+            <p className="stat-value">78.9</p>
+          </div>
+          <div className="stat-card">
+            <h3>Valor do Time</h3>
+            <p className="stat-value">R$ 88,50</p>
+          </div>
+          <div className="stat-card">
+            <h3>Patrimônio</h3>
+            <p className="stat-value">R$ 100,00</p>
+          </div>
+        </section>
       </main>
-
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>Sobre</h3>
-            <ul>
-              <li><a href="#">Como Jogar</a></li>
-              <li><a href="#">Regras</a></li>
-              <li><a href="#">Dúvidas</a></li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h3>Redes Sociais</h3>
-            <ul>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Twitter</a></li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h3>Suporte</h3>
-            <ul>
-              <li><a href="#">Contato</a></li>
-              <li><a href="#">Termos de Uso</a></li>
-              <li><a href="#">Privacidade</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>© 2025 Fantasy Brasileirão - Todos os direitos reservados</p>
-        </div>
-      </footer>
-    </div>
+      <Footer />
+    </>
   )
 }
 
