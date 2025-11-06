@@ -1,4 +1,4 @@
-import "./Jogador.css";
+import "../styles/Jogador.css";
 
 interface JogadorProps {
     nome?: string;
